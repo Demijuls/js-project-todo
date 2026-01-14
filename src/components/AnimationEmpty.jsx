@@ -7,7 +7,7 @@ export const AnimationEmpty = () => {
     style: { height: 380 },
     loop: true,
     autoplay: true,
-    loopComplete: () => console.log("Looped animation once"),
+    /* loopComplete: () => console.log("Looped animation once"), */
   };
   /*   const style = { height: 380 };
    */ return (
@@ -18,7 +18,7 @@ export const AnimationEmpty = () => {
         style={options.style}
         loop={options.loop}
         autoplay={options.autoplay}
-        onLoopComplete={options.loopComplete}
+        /* onLoopComplete={options.loopComplete} */
       />
     </>
   );
