@@ -6,7 +6,7 @@ export const PageHeading = () => {
   return (
     <>
       <h1>Hello there! What do you want to do today?</h1>
-      <div style={{ display: "flex", gap: "4px" }}>
+      <div style={{ display: "flex", gap: "4px", alignItems: "center" }}>
         <p>Today is </p>
         <TodaysDate />
       </div>

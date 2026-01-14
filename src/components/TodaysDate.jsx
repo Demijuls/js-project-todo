@@ -20,5 +20,5 @@ export const TodaysDate = () => {
     day: "numeric",
   });
 
-  return <p>{todayIs}</p>;
+  return <div>{todayIs}</div>;
 };
