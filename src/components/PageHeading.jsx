@@ -2,7 +2,7 @@ import { TaskCount } from "./TaskCount";
 import { AddNewTaskForm } from "./AddNewTaskForm";
 import { TodaysDate } from "./TodaysDate";
 
-export const PageHeading = () => {
+export const PageHeading = ({ onAddTask }) => {
   return (
     <>
       <h1>Hello there! What do you want to do today?</h1>
@@ -11,7 +11,7 @@ export const PageHeading = () => {
         <TodaysDate />
       </div>
       <TaskCount />
-      <AddNewTaskForm />
+      <AddNewTaskForm onAddTask={onAddTask} />
     </>
   );
 };

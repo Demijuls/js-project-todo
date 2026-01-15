@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { TodaysDate } from "./TodaysDate";
 import IconDelete from "../assets/icons/icondelete.svg";
 
 const IconButton = styled.button`
@@ -23,7 +21,15 @@ const IconButton = styled.button`
   }
 `;
 
-export const TaskCard = ({ isDone, name, category, timestamp }) => {
+export const TaskCard = ({
+  id,
+  isDone,
+  name,
+  category,
+  timestamp,
+  onToggle,
+  onDelete,
+}) => {
   /* checkbox to check task as completed */
 
   /* Task name - added from text field when user fills it - required */
@@ -34,13 +40,11 @@ export const TaskCard = ({ isDone, name, category, timestamp }) => {
 
   /* Icon button - deletes task */
   const ButtonDelete = () => {
-    const handleDelete = () => {};
-
     return (
       <IconButton
         className="buttonIconDelete"
         aria-label="delete"
-        onClick={() => handleDelete()}
+        onClick={() => onDelete(id)}
       >
         <img src={IconDelete} alt="delete-forever" className="iconDelete" />
       </IconButton>
@@ -49,11 +53,8 @@ export const TaskCard = ({ isDone, name, category, timestamp }) => {
 
   return (
     <div className="listContainer">
-      <form
-        action=""
-        style={{ display: "flex", alignItems: "center", gap: "20px" }}
-      >
-        <input type="checkbox" checked={isDone} />
+      <form style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+        <input type="checkbox" checked={isDone} onChange={() => onToggle(id)} />
         <p>{name}</p>
         <p>{category}</p>
         <p>{timestamp.toLocaleDateString()}</p>
