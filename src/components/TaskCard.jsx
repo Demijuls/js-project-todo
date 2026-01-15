@@ -1,3 +1,5 @@
+import { taskStore } from "../stores/TaskStore";
+
 import styled from "styled-components";
 import IconDelete from "../assets/icons/icondelete.svg";
 
@@ -21,6 +23,16 @@ const IconButton = styled.button`
   }
 `;
 
+export const TaskInfo = () => {
+  const { name, isDone } = taskStore();
+  return (
+    <>
+      <h2>{name}</h2>
+      <h2>{isDone}</h2>
+    </>
+  );
+};
+
 export const TaskCard = ({
   id,
   isDone,
@@ -39,6 +51,7 @@ export const TaskCard = ({
   /* Time stamp - added from today's date when user creates task (from the background) - can it be done? stored as raw date, maybe use createdAt somewhere in the TodaysDate component or should it be different?*/
 
   /* Icon button - deletes task */
+
   const ButtonDelete = () => {
     return (
       <IconButton

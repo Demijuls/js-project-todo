@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { AnimationEmpty } from "./components/animationEmpty";
 import { PageHeading } from "./components/PageHeading";
+
 import { TaskCard } from "./components/TaskCard";
-import { AddNewTaskForm } from "./components/AddNewTaskForm";
+import { TaskInfo } from "./components/TaskCard";
+
+/* import { taskStore } from "./stores/TaskStore"; */
 
 const tasksList = [
   {
@@ -93,6 +96,7 @@ export const App = () => {
       {/* <MainWrapper> */}
       <AnimationEmpty />
       <PageHeading onAddTask={addTask} />
+      <TaskInfo />
       {/*   <TaskCard
         onToggle={handleToggle}
         onDelete={deleteTask}
