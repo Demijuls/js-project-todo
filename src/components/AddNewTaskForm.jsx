@@ -1,13 +1,15 @@
 import { useState } from "react";
+import { useTaskStore } from "../stores/TaskStore";
 
-export const AddNewTaskForm = ({ onAddTask }) => {
-  const [task, setTask] = useState("");
-  /* const [tasks, setTasks] = useState([]); */
+export const AddNewTaskForm = () => {
+  const { addTask } = useTaskStore();
+
+  const [name, setName] = useState("");
 
   const [category, setCategory] = useState("On fire");
 
   const handleInputChange = (e) => {
-    setTask(e.target.value);
+    setName(e.target.value);
   };
 
   const handleSelectorChange = (e) => {
@@ -16,14 +18,10 @@ export const AddNewTaskForm = ({ onAddTask }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /* setTasks([
-      ...tasks,
-      task,
-    ]); /* spread operator is used to save all added tasks */
-    onAddTask(task, category);
 
-    setTask(""); /* empties input when user hits Add button */
-    /* setCategory([...category]); */
+    addTask({ name, category });
+
+    setName(""); /* empties input when user hits Add button */
   };
 
   return (
@@ -36,7 +34,7 @@ export const AddNewTaskForm = ({ onAddTask }) => {
           name="task-input"
           alt="enter your task here"
           placeholder="ex.: Buy milk for pancakes"
-          value={task}
+          value={name}
           onChange={handleInputChange}
           /* $error={} */
         />
@@ -51,12 +49,8 @@ export const AddNewTaskForm = ({ onAddTask }) => {
           <option value="do asap">Do asap</option>
           <option value="can wait">Can wait</option>
         </select>
-        <button type="submit" /* onClick={handleClick} */>+Add new task</button>
+        <button type="submit">+Add new task</button>
       </form>
-      {/* {console.log(category)} */}
-      {/* {tasks.map((item) => (
-        <p>{item}</p>
-      ))} */}
     </div>
   );
 };

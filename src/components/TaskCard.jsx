@@ -1,11 +1,7 @@
-import { taskStore } from "../stores/TaskStore";
-
 import styled from "styled-components";
 import IconDelete from "../assets/icons/icondelete.svg";
 
 const IconButton = styled.button`
-  /*  margin: 12px 0 0 24px; */
-  /* display: inline-flex; */
   padding: 4px 8px;
   background-color: transparent;
   align-items: center;
@@ -23,41 +19,23 @@ const IconButton = styled.button`
   }
 `;
 
-export const TaskInfo = () => {
-  const { name, isDone } = taskStore();
-  return (
-    <>
-      <h2>{name}</h2>
-      <h2>{isDone}</h2>
-    </>
-  );
-};
-
 export const TaskCard = ({
-  id,
   isDone,
   name,
   category,
   timestamp,
-  onToggle,
+  toggleFunction,
   onDelete,
 }) => {
-  /* checkbox to check task as completed */
-
-  /* Task name - added from text field when user fills it - required */
-
-  /* Category - added from drop down when user creates task - required */
-
-  /* Time stamp - added from today's date when user creates task (from the background) - can it be done? stored as raw date, maybe use createdAt somewhere in the TodaysDate component or should it be different?*/
-
   /* Icon button - deletes task */
-
   const ButtonDelete = () => {
     return (
       <IconButton
         className="buttonIconDelete"
         aria-label="delete"
-        onClick={() => onDelete(id)}
+        onClick={() => {
+          onDelete();
+        }}
       >
         <img src={IconDelete} alt="delete-forever" className="iconDelete" />
       </IconButton>
@@ -67,7 +45,11 @@ export const TaskCard = ({
   return (
     <div className="listContainer">
       <form style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-        <input type="checkbox" checked={isDone} onChange={() => onToggle(id)} />
+        <input
+          type="checkbox"
+          checked={isDone}
+          onChange={() => toggleFunction()}
+        />
         <p>{name}</p>
         <p>{category}</p>
         <p>{timestamp.toLocaleDateString()}</p>
