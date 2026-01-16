@@ -15,7 +15,7 @@ export const useTaskStore = create((set) => ({
             isDone: false,
             name,
             category,
-            timestamp: new Date(), // Time stamp - added from today's date when user creates task, stored as raw date, maybe use createdAt
+            timestamp: new Date(), // Time stamp - added from today's date when user creates task
           },
         ],
       };

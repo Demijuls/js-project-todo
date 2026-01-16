@@ -1,12 +1,15 @@
+import { useTaskStore } from "../stores/TaskStore";
+
 export const TaskCount = () => {
+  const { taskInfo } = useTaskStore();
+  const tasksDone = taskInfo.filter((task) => task.isDone).length;
+
   return (
     <>
       <h2>Tasks done:</h2>
-      <p>Y/X</p>
+      <p>
+        {tasksDone}/{taskInfo.length}
+      </p>
     </>
   );
 };
-
-/* x - total tasks,
-y - tasks done;
-useState; store tasks in array; find by id, completed: false/true,  */
