@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import IconDelete from "../assets/icons/icondelete.svg";
+import IconDelete from "../assets/icons/IconDelete.svg";
 
 const TaskWrapper = styled.div`
   background-color: var(--white-color);
