@@ -8,7 +8,7 @@ const TaskWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: 4px 0;
+  margin: 4px 20px;
 `;
 
 const TaskRow = styled.form`

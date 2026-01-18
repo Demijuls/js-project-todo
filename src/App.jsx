@@ -16,9 +16,9 @@ const MainWrapper = styled.div`
 const TasksList = () => {
   const { taskInfo, toggleDone, deleteTask } = useTaskStore();
   return (
-    <ul style={{ listStyle: "none" }}>
+    <ul style={{ listStyle: "none", margin: "0px", padding: "0px" }}>
       {taskInfo.map((task) => (
-        <li>
+        <li style={{ margin: "0px" }}>
           <TaskCard
             {...task}
             toggleFunction={() => {
