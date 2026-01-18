@@ -45,6 +45,10 @@ const ButtonStyled = styled.button`
     background-color: #1c3977;
     transform: scale(1.02);
   }
+
+  &:focus {
+    border: 2px solid #0049e8;
+  }
 `;
 
 export const AddNewTaskForm = () => {

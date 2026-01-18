@@ -37,4 +37,14 @@ export const useTaskStore = create((set) => ({
     set((state) => ({
       taskInfo: state.taskInfo.filter((task) => task.id !== id),
     })),
+
+  completeAll: () =>
+    set((state) => {
+      const completeAllTasks = state.taskInfo.every((task) => task.isDone);
+      const uncompletedAll = state.taskInfo.map((task) => ({
+        ...task,
+        isDone: !completeAllTasks,
+      }));
+      return { taskInfo: uncompletedAll };
+    }),
 }));

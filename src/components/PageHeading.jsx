@@ -1,6 +1,7 @@
 import { TaskCount } from "./TaskCount";
 import { AddNewTaskForm } from "./AddNewTaskForm";
 import { TodaysDate } from "./TodaysDate";
+import { useTaskStore } from "../stores/TaskStore";
 
 import styled from "styled-components";
 
@@ -38,7 +39,33 @@ const InfoWrapperRow = styled.div`
   }
 `;
 
+const CompleteButton = styled.button`
+  height: 32px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  background-color: transparent;
+  border: 1px solid var(--primary-grey);
+  border-radius: 6px;
+
+  &&:hover {
+    background-color: #bdd2ff;
+    transform: scale(1.02);
+  }
+
+  &&:active {
+    background-color: #78a2fa;
+    transform: scale(1.02);
+  }
+
+  &:focus {
+    border: 2px solid #0049e8;
+  }
+`;
+
 export const PageHeading = () => {
+  const { completeAll } = useTaskStore();
+
   return (
     <HeadingWrapper>
       <HeadingInfo>
@@ -49,6 +76,7 @@ export const PageHeading = () => {
             <TodaysDate />
           </div>
           <TaskCount />
+          <CompleteButton onClick={completeAll}>Complete all</CompleteButton>
         </InfoWrapperRow>
       </HeadingInfo>
       <AddNewTaskForm />

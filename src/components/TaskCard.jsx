@@ -53,6 +53,10 @@ const IconButton = styled.button`
   border-radius: 6px;
   cursor: pointer;
 
+  &:focus {
+    background-color: #0040cb;
+  }
+
   &:hover {
     background-color: #f47996;
   }
@@ -81,7 +85,7 @@ export const TaskCard = ({
           onDelete();
         }}
       >
-        <img src={IconDelete} alt="delete-forever" className="iconDelete" />
+        <img src={IconDelete} className="iconDelete" />
       </IconButton>
     );
   };
