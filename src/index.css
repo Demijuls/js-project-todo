@@ -1,3 +1,18 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", Avenir, Helvetica, Arial, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  --text-dark: #1B1B1E;
+  --primary-grey: #1a2232;
+  --primary-color: #E9D2BC;
+  --secondary-color: #B3B492;
+  --accent-color: #58A4B0;
+  --accent-secondary-color: #BA3F1D;
+  --white-color: #fff;
+  ---black-color: #000;
+  background-color: var(--primary-color);
+  color: var(--text-dark);
 }

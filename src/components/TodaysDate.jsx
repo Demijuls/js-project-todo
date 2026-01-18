@@ -20,5 +20,16 @@ export const TodaysDate = () => {
     day: "numeric",
   });
 
-  return <div>{todayIs}</div>;
+  return (
+    <div
+      className="todayDate"
+      style={{
+        fontSize: "16px",
+        fontWeight: "700",
+        textWrap: "wrap",
+      }}
+    >
+      {todayIs}
+    </div>
+  );
 };

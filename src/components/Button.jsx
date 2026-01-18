@@ -1,3 +1,5 @@
+//This component is currently not in use, I left it for future updates
+
 import styled from "styled-components";
 
 const ButtonStyled = styled.button`
@@ -9,8 +11,6 @@ const ButtonStyled = styled.button`
   font-weight: 700;
   font-size: 16px;
   text-decoration: none;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   cursor: pointer;
 
   &:hover {

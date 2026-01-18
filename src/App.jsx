@@ -7,10 +7,10 @@ import styled from "styled-components";
 import { useTaskStore } from "./stores/TaskStore";
 
 const MainWrapper = styled.div`
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  font-family: "Nunito", Avenir, Helvetica, Arial, sans-serif;
 `;
 
 const TasksList = () => {
@@ -39,11 +39,9 @@ export const App = () => {
   const emptyState = taskInfo.length === 0;
 
   return (
-    <>
-      <MainWrapper>
-        <PageHeading />
-        {emptyState ? <AnimationEmpty /> : <TasksList />}
-      </MainWrapper>
-    </>
+    <MainWrapper className="mainWrapper">
+      <PageHeading />
+      {emptyState ? <AnimationEmpty /> : <TasksList />}
+    </MainWrapper>
   );
 };
