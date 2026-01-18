@@ -1,4 +1,4 @@
-import { AnimationEmpty } from "./components/animationEmpty";
+import { AnimationEmpty } from "./components/AnimationEmpty";
 import { PageHeading } from "./components/PageHeading";
 import { TaskCard } from "./components/TaskCard";
 
